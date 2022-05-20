@@ -39,9 +39,9 @@ class _MainScreenState extends State<MainScreen> {
             backgroundColor: Colors.black54,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.no_food_rounded),
+            icon: Icon(Icons.set_meal),
             label: 'Питание',
-            backgroundColor: Colors.black54,
+            backgroundColor: Colors.orangeAccent, //Изменил цвет вкладки
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.sports_gymnastics),
@@ -55,7 +55,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.red[800],
+        selectedItemColor: Colors.white, //Изменил цвет иконок(нужен или общий цвет, или у каждого пункта приложения свой)
         onTap: _onItemTapped,
       ),
     );
