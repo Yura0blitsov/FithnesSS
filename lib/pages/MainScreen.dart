@@ -51,7 +51,7 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.airline_seat_individual_suite),
             label: 'Сон',
-            backgroundColor: Colors.black54,
+            //backgroundColor: Colors.black54,
           ),
         ],
         currentIndex: _selectedIndex,

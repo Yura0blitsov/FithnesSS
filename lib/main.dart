@@ -8,5 +8,3 @@ void main() => runApp(MaterialApp(
       home: MainScreen(),
 ));
 
-
-

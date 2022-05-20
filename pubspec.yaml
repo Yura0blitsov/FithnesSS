@@ -62,6 +62,14 @@ flutter:
     - assets/mass_gain.jpeg
     - assets/weight_loss.jpeg
     - assets/general_strengthening.jpeg
+    - assets/mass_gain/legs.jpg
+    - assets/mass_gain/pectoral.jpg
+    - assets/mass_gain/shoulders.jpg
+    - assets/mass_gain/back.jpg
+    - assets/mass_gain/legs/velo.jpg
+    - assets/mass_gain/legs/pris.jpg
+    - assets/mass_gain/legs/sgib.jpg
+    - assets/mass_gain/legs/rasgib.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
