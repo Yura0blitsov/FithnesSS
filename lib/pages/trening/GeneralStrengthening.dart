@@ -5,6 +5,10 @@ import 'package:untitled/pages/TreningElements.dart';
 class GeneralStrengthening extends StatefulWidget {
   const GeneralStrengthening({Key? key}) : super(key: key);
 
+  List<Trenings_Day> get()
+  {
+    return _GeneralStrengtheningState().trenings_days;
+  }
   @override
   State<GeneralStrengthening> createState() => _GeneralStrengtheningState();
 }

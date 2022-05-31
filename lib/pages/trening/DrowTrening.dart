@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/pages/TreningElements.dart';
 import 'dart:async';
+import 'package:untitled/pages/trening/NewTrening.dart';
 
 class DrowTrening extends StatefulWidget {
 
@@ -15,7 +16,7 @@ class DrowTrening extends StatefulWidget {
 
 class _DrowTreningState extends State<DrowTrening> {
   var elements = TreningElements();
-
+  String? name_of_new_trening = '';
   _DrowTreningState(TreningElements elements)
   {
     this.elements = elements;
@@ -28,9 +29,51 @@ class _DrowTreningState extends State<DrowTrening> {
         title: Text(elements.appbar),
         backgroundColor: Colors.black54,
         centerTitle: true,
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.delete),
+              tooltip: 'Show Snackbar',
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Удаление тренировки')));
+              },)]
       ),
-      body: elements.trening,
-    );
+      body: Scaffold(
+      body:elements.trening,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => showDialog<String>(
+            context: context,
+            builder: (BuildContext context) => AlertDialog(
+              title: const Text('Введите новый раздел'),
+              content: TextField(onChanged: (text) {
+                if(text != '')
+                {
+                  String s = text.toString();
+                  name_of_new_trening = s;
+                }
+              },
+                  decoration: InputDecoration(
+                    labelText: "Введите название раздела",
+                    fillColor: Colors.black12,
+                    filled: true,
+                  )),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () => Navigator.pop(context, 'Назад'),
+                  child: const Text('Назад'),
+                ),
+                TextButton(
+                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return NewTrening(name_of_new_trening, elements.trening);
+                  })),
+                  child: const Text('Далее'),
+                ),
+              ],
+            ),
+          ),
+          backgroundColor: Colors.grey[800],
+          child: const Icon(Icons.add),),
+      ));
   }
 }
 

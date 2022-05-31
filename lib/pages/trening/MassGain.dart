@@ -5,7 +5,10 @@ import 'package:untitled/pages/TreningElements.dart';
 
 class MassGain extends StatefulWidget {
   const MassGain({Key? key}) : super(key: key);
-
+  List<Trenings_Day> get()
+  {
+    return _MassGainState().trenings_days;
+  }
   @override
   _MassGainState createState() => _MassGainState();
 }
@@ -42,6 +45,8 @@ class _MassGainState extends State<MassGain> {
       description: "Тренировка направлена на проработку грудных мышц и трицепса",
     )..TreningList = [Trening(name:"бббббб",type_of_trening: 1,time: 0),Trening(name:"Жим лёжа",type_of_trening: 1,time: 0),Trening(name:"Жим лёжа",type_of_trening: 1,time: 0),Trening(name:"Жим лёжа",type_of_trening: 1,time: 0)],
   ];
+
+
 
   Widget build(BuildContext context) {
     return DrowTreningDayList(trenings_days);

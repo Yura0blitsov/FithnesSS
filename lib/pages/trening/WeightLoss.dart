@@ -4,6 +4,10 @@ import 'package:untitled/pages/TreningElements.dart';
 
 class WeightLoss extends StatefulWidget {
   const WeightLoss({Key? key}) : super(key: key);
+  List<Trenings_Day> get()
+  {
+    return _WeightLossState().trenings_days;
+  }
 
   @override
   _WeightLossState createState() => _WeightLossState();

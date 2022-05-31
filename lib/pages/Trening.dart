@@ -15,14 +15,12 @@ class Trening extends StatefulWidget {
 
 class _TreningState extends State<Trening> {
   String appbar = 'Тренировки';
+
   final TreningList = <TreningElements>[
     TreningElements(image_path: "assets/mass_gain.jpeg",appbar: "НАБОР МАССЫ", trening: MassGain()),
     TreningElements(image_path: 'assets/weight_loss.jpeg', appbar: 'КАРДИО', trening: WeightLoss()),
     TreningElements(image_path: 'assets/general_strengthening.jpeg', appbar: "ОФП и ЛФК", trening: GeneralStrengthening()),
     ];
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,24 +28,8 @@ class _TreningState extends State<Trening> {
           title: Text(appbar),
           backgroundColor: Colors.black54,
           centerTitle: true,
-            actions: <Widget>[
-              IconButton(
-                icon: const Icon(Icons.delete),
-                tooltip: 'Show Snackbar',
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Удаление тренировки')));
-                },)]
         ),
         body: Scaffold(
-                        floatingActionButton: FloatingActionButton(
-                            onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                return NewTrening();
-                              }));
-                            },
-                            backgroundColor: Colors.grey[800],
-                            child: const Icon(Icons.add),),
                         backgroundColor: Colors.black12,
                         body: ListView.builder(
                             padding: const EdgeInsets.all(0),
