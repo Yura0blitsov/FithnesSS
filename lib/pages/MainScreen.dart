@@ -14,7 +14,7 @@ class _MainScreenState extends State<MainScreen> {
   static const List<Widget> _widgetOptions = <Widget>[
     Achievements(),
     Nutrition(),
-    Trening(),
+    Trening2(),
     Sleep()
   ];
 

@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:untitled/pages/TreningElements.dart';
 import 'package:untitled/pages/trening/DrowTrening.dart';
 
-
 class NewTrening extends StatefulWidget {
- String? name_of_trening;
- late Widget trening;
- NewTrening(String? name, Widget tren)
+ late String name_of_trening;
+ late List<Trenings_Day> trening;
+ NewTrening(String name, List<Trenings_Day> tren)
  {
    trening = tren;
    this.name_of_trening = name;
@@ -18,16 +17,16 @@ class NewTrening extends StatefulWidget {
 enum SingingCharacter { time, repeat, time_repeat }
 class _NewTreningState extends State<NewTrening> {
   SingingCharacter? _character = SingingCharacter.time;
-  String? name_of_trening;
-  late Widget trening;
-  _NewTreningState(String? name, Widget tren)
+  late String name_of_trening;
+  late List<Trenings_Day> trening;
+  _NewTreningState(String name, List<Trenings_Day> tren)
   {
     trening = tren;
     this.name_of_trening = name;
 
 
   }
-  late Trening trenings_elements;
+  late Trening trenings_elements = new Trening();
   int size_of_trening_list = 1;
   @override
   Widget build(BuildContext context) {
@@ -137,7 +136,15 @@ class _NewTreningState extends State<NewTrening> {
             margin: EdgeInsets.symmetric(horizontal: 50, vertical: 8),
             child: TextButton(
               onPressed: (){
-
+                var tren_list = trenings_elements;
+                Trenings_Day tren = new Trenings_Day(target_muscle_group: name_of_trening)..TreningList = [tren_list];
+                trening[1].TreningList.add(tren_list);
+                for(int i = 0; i < trening.length; i++)
+                  {
+                    print(trening[i].TreningList[i].name);
+                  }
+                Navigator.pop(context);
+                Navigator.pop(context);
               },
               child: Text('Далее', style: TextStyle(fontSize: 18, color: Colors.white),),
             ),
@@ -149,6 +156,7 @@ class _NewTreningState extends State<NewTrening> {
 }
 
 
+
 class New_ extends StatefulWidget {
   const New_({Key? key}) : super(key: key);
 
@@ -157,10 +165,6 @@ class New_ extends StatefulWidget {
 }
 
 class _New_State extends State<New_> {
-  void add_trening()
-  {
-
-  }
   @override
   var trenings_days = <Trenings_Day>[];
   Widget build(BuildContext context) {

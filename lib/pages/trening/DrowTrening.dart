@@ -8,7 +8,7 @@ class DrowTrening extends StatefulWidget {
   var elements = TreningElements();
   DrowTrening(TreningElements elements)
   {
-    this.elements = elements;
+    this.elements.trening = elements.trening;
   }
   @override
   _DrowTreningState createState() => _DrowTreningState(this.elements);
@@ -16,10 +16,10 @@ class DrowTrening extends StatefulWidget {
 
 class _DrowTreningState extends State<DrowTrening> {
   var elements = TreningElements();
-  String? name_of_new_trening = '';
+  late String name_of_new_trening = '';
   _DrowTreningState(TreningElements elements)
   {
-    this.elements = elements;
+    this.elements.trening = elements.trening;
   }
 
   @override
@@ -39,7 +39,7 @@ class _DrowTreningState extends State<DrowTrening> {
               },)]
       ),
       body: Scaffold(
-      body:elements.trening,
+      body: DrowTreningDayList(elements.trening),
         floatingActionButton: FloatingActionButton(
           onPressed: () => showDialog<String>(
             context: context,
@@ -63,9 +63,11 @@ class _DrowTreningState extends State<DrowTrening> {
                   child: const Text('Назад'),
                 ),
                 TextButton(
-                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return NewTrening(name_of_new_trening, elements.trening);
-                  })),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return NewTrening(name_of_new_trening,  elements.trening);
+                  }));
+                    },
                   child: const Text('Далее'),
                 ),
               ],
