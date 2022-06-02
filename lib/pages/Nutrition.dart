@@ -16,7 +16,7 @@ class _NutritionState extends State<Nutrition> {
       context,
       PageRouteBuilder(
         opaque: false,
-        pageBuilder: (BuildContext context, _, __) => const ConfigNutrition(),
+        pageBuilder: (BuildContext context, _, __) => const TreningPurpose(),
       ),
     );
     //Navigator.push(context, MaterialPageRoute(builder: (context) => StartScreen()));
