@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'nutrClasses/ConfigNutrition.dart';
 
 class Nutrition extends StatefulWidget {
   const Nutrition({Key? key}) : super(key: key);
@@ -10,12 +11,13 @@ class Nutrition extends StatefulWidget {
 class _NutritionState extends State<Nutrition> {
   String appbar = 'Питание';
 
-  void startCalc()
-  {
-    Navigator.push(context, PageRouteBuilder(
-      opaque: false,
-      pageBuilder: (BuildContext context, _, __)=>const ConfigNutrition(), //?
-    ),
+  void startCalc() {
+    Navigator.push(
+      context,
+      PageRouteBuilder(
+        opaque: false,
+        pageBuilder: (BuildContext context, _, __) => const ConfigNutrition(),
+      ),
     );
     //Navigator.push(context, MaterialPageRoute(builder: (context) => StartScreen()));
   }
@@ -28,7 +30,6 @@ class _NutritionState extends State<Nutrition> {
           backgroundColor: Colors.orangeAccent,
           centerTitle: true,
         ),
-
         body: Column(
           children: [
             Container(
@@ -46,19 +47,19 @@ class _NutritionState extends State<Nutrition> {
                       style: TextStyle(
                         color: Colors.brown[900],
                         fontSize: 20.0,
-                      )
-                  ),
+                      )),
                 ),
               ),
             )
-
           ],
         )
     );
   }
 }
 
-class ConfigNutrition extends StatelessWidget { //создать отдельный файл в папке
+
+/* Старый, неизменяемый виджет
+class ConfigNutrition extends StatelessWidget {
   const ConfigNutrition({Key? key}) : super(key: key);
 
   @override
@@ -94,8 +95,4 @@ class ConfigNutrition extends StatelessWidget { //создать отдельн�
         ),
       ],
     );
-
-
-
-  }
-}
+ */
